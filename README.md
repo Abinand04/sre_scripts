@@ -7,3 +7,4 @@ engineering into SRE.
 
 - `projects/` — endpoint health checker: checks a list of URLs, reports
   status code and latency, exits non-zero if any fail
+  Runs in Docker as a non-root user.
