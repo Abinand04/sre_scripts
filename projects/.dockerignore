@@ -1,0 +1,12 @@
+#local Python environment and cache
+.venv/
+**/__pycache__/
+*.pyc
+
+#Files not needed in this image
+README.md
+oom_hog.py
+
+#Dockers build files
+Dockerfile
+.dockerignore
