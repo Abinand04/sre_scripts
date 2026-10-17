@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: voting-app
+    name: vote-app
+  name: vote-app
+  namespace: vote-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voting-app
+      name: vote-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: voting-app
+        name: vote-app
+    spec:
+      containers:
+      - image: kodekloud/examplevotingapp_vote:v1
+        name: vote-app
+        resources: {}
+status: {}

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: voting-app
+    name: redis
+  name: redis
+  namespace: vote-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: redis
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: voting-app
+        name: redis
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+status: {}

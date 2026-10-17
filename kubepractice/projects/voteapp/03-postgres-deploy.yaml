@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: voting-app
+    name: postgres
+  name: postgres
+  namespace: vote-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voting-app
+      name: postgres
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: voting-app
+        name: postgres
+    spec:
+      containers:
+      - image: postgres:13
+        name: postgres
+        env:
+          - name: POSTGRES_USER
+            value: "postgres"
+          - name: POSTGRES_PASSWORD
+            value: "postgres"
+        resources: {}
+
